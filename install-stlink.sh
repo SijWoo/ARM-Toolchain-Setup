@@ -11,22 +11,26 @@ DARKGRAY='\033[1;30m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
-# Install ARM compiler
 echo -e "${DARKGRAY}=======================================${NC}"
-echo -e "${CYAN}Installing ARM GNU C/C++ Compiler${NC}"
-sudo apt-get install gcc-arm-none-eabi
+echo -e "${CYAN}Installing git${NC}"
+sudo apt-get install git
 
-# Need Binutils for converting and processing the object files built by compiler
 echo -e "${DARKGRAY}=======================================${NC}"
-echo -e "${CYAN}Installing ARM Binutils${NC}"
-sudo apt-get install binutils-arm-none-eabi
+echo -e "${CYAN}Installing cmake${NC}"
+sudo apt-get install cmake
 
-# Need ARM GDB executables for debugging
+# STLINK needs access to USB but only works with version 1.0-0
 echo -e "${DARKGRAY}=======================================${NC}"
-echo -e "${CYAN}Installing GDB for ARM${NC}"
-sudo apt-get install gdb-multiarch
+echo -e "${CYAN}Installing libusb-1.0-0-dev${NC}"
+sudo apt-get install libusb-1.0-0-dev
 
 # Update packages
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Updating Packages${NC}"
 sudo apt-get update
+
+# Get latest release from Texane's STLink repo
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Cloning STLink${NC}"
+git clone https://github.com/texane/stlink.git
+
