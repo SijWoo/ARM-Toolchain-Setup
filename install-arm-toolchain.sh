@@ -22,9 +22,14 @@ echo -e "${CYAN}Installing ARM Binutils${NC}"
 sudo apt-get install binutils-arm-none-eabi
 
 # Need ARM GDB executables for debugging
+# arm-none-eabi-gdb is not supported for Ubuntu 16+ so gdb-multiarch
+# needs to be downloaded instead and linked for backwards support if
+# applications still uses the arm-none-eabi-gdb name
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing GDB for ARM${NC}"
 sudo apt-get install gdb-multiarch
+sudo ln -s /usr/bin/gdb-multiarch /usr/bin/arm-none-eabi-gdb
+
 
 # Update packages
 echo -e "${DARKGRAY}=======================================${NC}"
