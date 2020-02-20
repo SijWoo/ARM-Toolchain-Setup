@@ -8,6 +8,7 @@ Scripts to install dependencies to compile and flash ARM microcontrollers. This
 You must download the compiler so run the install-arm-toolchain.sh script plus any debugger/flash tool.
 
 Jlink can be used for almost any ARM microcontroller. (install-jlink.sh)
+
 Stlink is only meant for STM microcontrollers. (install-stlink.sh)
 
 Please note the bins for stlink is created from [Texane's stlink repo](https://github.com/texane/stlink) and the bins are contained in that directory. Moving the directory could make stlink stop working on your machine unless you edit the path.
