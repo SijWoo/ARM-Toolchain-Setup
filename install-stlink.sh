@@ -34,3 +34,21 @@ echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Cloning STLink${NC}"
 git clone https://github.com/texane/stlink.git
 
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Switching to Latest Release${NC}"
+cd stlink
+git pull
+version="$(git describe --abbrev=0 --tag)"
+git checkout tags/${version}
+
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Build Stlink${NC}"
+make clean
+echo -e "Ignore the error if make clean fails. This is just a check to make sure you don't have any pre-existing bins."
+make release
+cd build/Release
+sudo make install
+sudo ldconfig
+
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Installation Complete${NC}"
