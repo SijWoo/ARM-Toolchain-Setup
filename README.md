@@ -1,11 +1,11 @@
 # ARM-Toolchain-Setup
-Scripts to install dependencies to compile and flash ARM microcontrollers. This 
+Scripts to install dependencies to compile and flash ARM microcontrollers.
 
 ## Tested for the following Linux Distros:
 1. Ubuntu LTS 18.10
 
 ## Installation
-You must download the compiler so run the install-arm-toolchain.sh script plus any debugger/flash tool.
+You must download the compiler plus any debugger/flash tool needed for your board. Run install-arm-toolchain.sh to compile and debug your board.
 
 Jlink can be used for almost any ARM microcontroller. (install-jlink.sh)
 
@@ -20,7 +20,7 @@ chmod u+x script.sh
 ```
 
 ### Updates
-Running the bash scripts periodically will keep your toolchains updated. If you need something, create an Issue and I will get the bash scripts working ASAP.
+Running the bash scripts periodically will keep your toolchains updated. If you need something, create an Issue ticket and I will accomodate ASAP.
 
 ## How to Check if Everything was Installed
 If you do not get any errors, call the following lines depending on which script was executed. You should not see any errors that the system can't find the bin files.

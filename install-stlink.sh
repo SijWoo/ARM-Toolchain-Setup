@@ -11,6 +11,9 @@ DARKGRAY='\033[1;30m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
+# Ubuntu
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing git${NC}"
 sudo apt-get install git
@@ -42,7 +45,7 @@ version="$(git describe --abbrev=0 --tag)"
 git checkout tags/${version}
 
 echo -e "${DARKGRAY}=======================================${NC}"
-echo -e "${CYAN}Build Stlink${NC}"
+echo -e "${CYAN}Build STLink${NC}"
 make clean
 echo -e "Ignore the error if make clean fails. This is just a check to make sure you don't have any pre-existing bins."
 make release
@@ -52,3 +55,17 @@ sudo ldconfig
 
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installation Complete${NC}"
+
+# MAC OSX
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Installing STLink${NC}"
+sudo brew install stlink
+
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Installation Complete${NC}"
+
+# POSIX compatibility layer and Linux environment emulation for Windows
+elif [[ "$OSTYPE" == "cygwin" ]]; then
+    # IDK yet
+fi
