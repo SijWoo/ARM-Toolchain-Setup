@@ -12,7 +12,7 @@ YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
 # Ubuntu
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
+if [ "$OSTYPE" == "linux-gnu" ]; then
 
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing git${NC}"
@@ -57,7 +57,7 @@ echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installation Complete${NC}"
 
 # MAC OSX
-elif [[ "$OSTYPE" == "darwin"* ]]; then
+elif [ "$OSTYPE" == "darwin"* ]; then
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing STLink${NC}"
 sudo brew install stlink
@@ -66,6 +66,11 @@ echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installation Complete${NC}"
 
 # POSIX compatibility layer and Linux environment emulation for Windows
-elif [[ "$OSTYPE" == "cygwin" ]]; then
+elif [ "$OSTYPE" == "cygwin" ]; then
     # IDK yet
+    echo ""
 fi
+
+done
+
+
