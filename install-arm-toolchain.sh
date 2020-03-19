@@ -11,6 +11,9 @@ DARKGRAY='\033[1;30m'
 YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
+# Ubuntu
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+
 # Install ARM compiler
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing ARM GNU C/C++ Compiler${NC}"
@@ -35,3 +38,17 @@ sudo ln -s /usr/bin/gdb-multiarch /usr/bin/arm-none-eabi-gdb
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Updating Packages${NC}"
 sudo apt-get update
+
+# Check for tool chains
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Checking for Toolchains.\n${ORANGE}IF YOU SEE ERRORS, SOMETHING WENT WRONG${NC}"
+arm-none-eabi-gcc --version
+arm-none-eabi-gdb --version
+
+
+# MAC OSX
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Updating Packages${NC}"
+
+fi
