@@ -13,5 +13,7 @@ NC='\033[0m' # No Color
 
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing JLink${NC}"
-sudo apt-get install jlink
+wget https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
+sudo apt-get install ./JLink_Linux_x86_64.deb
+
 
