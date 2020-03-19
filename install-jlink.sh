@@ -12,9 +12,12 @@ YELLOW='\033[0;33m'
 NC='\033[0m' # No Color
 
 echo -e "${DARKGRAY}=======================================${NC}"
-echo -e "${CYAN}Installing JLink${NC}"
+echo -e "${CYAN}Retrieving JLink from SEGGER's Website${NC}"
 rm JLink_Linux_x86_64.deb
 wget --post-data="accept_license_agreement=accepted" https://www.segger.com/downloads/jlink/JLink_Linux_x86_64.deb
+
+echo -e "${DARKGRAY}=======================================${NC}"
+echo -e "${CYAN}Installing JLink${NC}"
 sudo apt-get install ./JLink_Linux_x86_64.deb
 
 

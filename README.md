@@ -2,7 +2,10 @@
 Scripts to install dependencies to compile and flash ARM microcontrollers.
 
 ## Tested for the following Linux Distros:
-1. Ubuntu LTS 18.10
+1. Ubuntu LTS 18.04
+
+## Version
+The install-arm-toolchains.sh script will install ARM's 9-2019-q4-major version. This repo will be updated to install the newest release. If there is a new GNU update and the scripts aren't updated, then you can either do the following
 
 ## Installation
 You must download the compiler plus any debugger/flash tool needed for your board. Run install-arm-toolchain.sh to compile and debug your board.
@@ -36,6 +39,9 @@ st-info --version
 ```
 JLinkExe
 ```
+
+## Uninstallation
+To remove all files, run the uninstall.sh script. This will remove everything that all the scripts download.
 
 ## Useful Tools
 [VSCode](https://code.visualstudio.com/) is a useful text editor if you are not comfortable with command line debugging. I like vscode since I can look at the registers. Download the cortex-debug extension.

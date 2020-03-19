@@ -1,2 +1,6 @@
 stlink
-JLink_Linux_x86_64.deb*
+JLink*
+gcc-arm-none-eabi*
+*.deb
+*.tar.bz2
+*.zip
