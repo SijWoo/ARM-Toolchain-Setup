@@ -13,17 +13,28 @@ NC='\033[0m' # No Color
 
 read -p "Are you sure? This will uninstall the ARM-Toolchain, JLink, and STLink. [Y/n] " -n 1 -r
 echo    # (optional) move to a new line
+
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-    echo -e "${DARKGRAY}=======================================${NC}"
-    echo -e "${RED}Uninstalling ARM Toolchain${NC}"
-    sudo apt purge arm-none-eabi*
 
-    echo -e "${DARKGRAY}=======================================${NC}"
-    echo -e "${RED}Uninstalling STLink${NC}"
-    rm -r -f stlink
+    # Ubuntu
+    if [ "$OSTYPE" == "linux-gnu" ]; then
+        echo -e "${DARKGRAY}=======================================${NC}"
+        echo -e "${RED}Uninstalling ARM Toolchain${NC}"
+        find . -name 'gcc-arm*' -exec rm -r {} \;
+        sudo apt purge arm-none-eabi*
+        sudo rm /usr/local/bin/arm-none-eabi*
 
-    echo -e "${DARKGRAY}=======================================${NC}"
-    echo -e "${RED}Uninstalling JLink${NC}"
-    sudo apt purge ^JLink
+        echo -e "${DARKGRAY}=======================================${NC}"
+        echo -e "${RED}Uninstalling STLink${NC}"
+        rm -r -f stlink
+
+        echo -e "${DARKGRAY}=======================================${NC}"
+        echo -e "${RED}Uninstalling JLink${NC}"
+        sudo apt purge ^JLink
+    
+    # MAC OSX
+    elif [[ "$OSTYPE" == "darwin"* ]]; then
+        echo "TODO: Make script runnable for MACS"
+    fi
 fi
