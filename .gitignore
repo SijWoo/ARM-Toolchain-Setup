@@ -4,3 +4,4 @@ gcc-arm-none-eabi*
 *.deb
 *.tar.bz2
 *.zip
+test*

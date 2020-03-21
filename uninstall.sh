@@ -24,6 +24,7 @@ then
         find . -name 'gcc-arm*' -exec rm -r {} \;
         sudo apt purge arm-none-eabi*
         sudo rm /usr/local/bin/arm-none-eabi*
+        rm -r gcc-arm-none-eabi
 
         echo -e "${DARKGRAY}=======================================${NC}"
         echo -e "${RED}Uninstalling STLink${NC}"

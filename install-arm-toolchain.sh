@@ -36,8 +36,15 @@ echo -e "${CYAN}Installing ARM GNU Toolchain${NC}"
 echo "Extracting..."
 mkdir gcc-arm-none-eabi
 tar xjf gcc-arm-none-eabi.tar.bz2 -C gcc-arm-none-eabi --strip-components=1
-echo "Placing bin files in /usr/local/bin"
-sudo cp gcc-arm-none-eabi/bin/* /usr/local/bin/
+
+echo "Configuring ~/.bashrc file to export gcc-arm-none-eabi path"
+
+# Get path to the toolchain directory
+EXPORT_GCC_PATH="export PATH=\"\$PATH:$(pwd)/gcc-arm-none-eabi/bin\""
+
+# Find if export command already exists. If it already exists for the gcc-arm-none-eabi path, then it should be replaced
+sudo grep -i 'gcc-arm-none-eabi/bin' ~/.bashrc && sed -i "/gcc-arm-none-eabi/c\\$EXPORT_GCC_PATH" ~/.bashrc || echo "$EXPORT_GCC_PATH" >> ~/.bashrc
+source ~/.bashrc
 
 echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Updating Packages${NC}"
