@@ -20,11 +20,13 @@ then
     # Ubuntu
     if [ "$OSTYPE" == "linux-gnu" ]; then
         echo -e "${DARKGRAY}=======================================${NC}"
-        echo -e "${RED}Uninstalling ARM Toolchain${NC}"
+        echo -e "${RED}Uninstalling ARM Toolchains${NC}"
         find . -name 'gcc-arm*' -exec rm -r {} \;
         sudo apt purge arm-none-eabi*
         sudo rm /usr/local/bin/arm-none-eabi*
         rm -r gcc-arm-none-eabi
+        rm -r gcc-arm-none-linux-gnueabihf
+        rm -r gcc-aarch64-none-linux-gnu
 
         echo -e "${DARKGRAY}=======================================${NC}"
         echo -e "${RED}Uninstalling STLink${NC}"
