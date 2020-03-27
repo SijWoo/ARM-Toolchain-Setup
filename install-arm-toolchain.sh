@@ -35,7 +35,7 @@ echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing ARM GNU Toolchain${NC}"
 echo "Extracting..."
 mkdir gcc-arm-none-eabi
-tar xjf gcc-arm-none-eabi.tar.bz2 -C gcc-arm-none-eabi --strip-components=1
+tar bz2 gcc-arm-none-eabi.tar.bz2 -C gcc-arm-none-eabi --strip-components=1
 
 echo "Configuring ~/.bashrc file to export gcc-arm-none-eabi path"
 

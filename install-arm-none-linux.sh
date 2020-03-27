@@ -25,7 +25,7 @@ echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing ARM GNU Toolchain${NC}"
 echo "Extracting..."
 mkdir gcc-arm-none-linux-gnueabihf
-tar xjf gcc-arm-none-linux-gnueabihf.tar.bz2 -C gcc-arm-none-linux-gnueabihf --strip-components=1
+tar bz2 gcc-arm-none-linux-gnueabihf.tar.bz2 -C gcc-arm-none-linux-gnueabihf --strip-components=1
 
 echo "Configuring ~/.bashrc file to export gcc-arm-none-linux-gnueabihf path"
 

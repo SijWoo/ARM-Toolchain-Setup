@@ -25,7 +25,7 @@ echo -e "${DARKGRAY}=======================================${NC}"
 echo -e "${CYAN}Installing ARM GNU Toolchain${NC}"
 echo "Extracting..."
 mkdir gcc-aarch64-none-linux-gnu
-tar xjf gcc-aarch64-none-linux-gnu.tar.bz2 -C gcc-aarch64-none-linux-gnu --strip-components=1
+tar bz2 gcc-aarch64-none-linux-gnu.tar.bz2 -C gcc-aarch64-none-linux-gnu --strip-components=1
 
 echo "Configuring ~/.bashrc file to export gcc-aarch64-none-linux-gnu path"
 
