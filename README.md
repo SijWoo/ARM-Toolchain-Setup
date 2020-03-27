@@ -4,15 +4,22 @@ Scripts to install dependencies to compile and flash ARM microcontrollers.
 ## Tested for the following Linux Distros:
 1. Ubuntu LTS 18.04
 
-## Version
+## GCC Version
 The install-arm-toolchains.sh script will install ARM's 9-2019-q4-major version. This repo will be updated to install the newest release. If there is a new GNU update and the scripts aren't updated, then you can either do the following
 
 ## Installation
-You must download the compiler plus any debugger/flash tool needed for your board. Run install-arm-toolchain.sh to compile and debug your board.
+You must download the compiler plus any debugger/flash tool needed for your board.
 
-Jlink can be used for almost any ARM microcontroller. (install-jlink.sh)
+The following list shows which scripts corresponds to which device.
+1. ARM Cortex-R or Cortex-M microcontrollers : install-arm-toolchain.sh
+2. ARM Cortex-A 32-bit microprocessors running Embedded Linux : install-arm-none-linux.sh
+3. ARM Cortex-A 64-bit microprocessors running Embedded Linux : install-aarch64-none-linux.sh
 
-Stlink is only meant for STM microcontrollers. (install-stlink.sh)
+Please note the scripts for the ARM Cortex-A microprocessors will only work on an x86_64 machine.
+
+The following list shows which flash/debugger scripts you need to install.
+1. Jlink can be used for almost any ARM microcontroller : install-jlink.sh
+2. Stlink is only meant for STM microcontrollers : install-stlink.sh
 
 Please note the bins for stlink is created from [Texane's stlink repo](https://github.com/texane/stlink) and the bins are contained in that directory. Moving the directory could make stlink stop working on your machine unless you edit the path.
 

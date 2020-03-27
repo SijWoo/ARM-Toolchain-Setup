@@ -1,6 +1,8 @@
 stlink
 JLink*
 gcc-arm-none-eabi*
+gcc-aarch64-none-linux-gnu*
+gcc-arm-none-linux-gnueabihf*
 *.deb
 *.tar.bz2
 *.zip
