@@ -3,6 +3,7 @@ Scripts to install dependencies to compile and flash ARM microcontrollers.
 
 ## Tested for the following Linux Distros:
 1. Ubuntu LTS 18.04
+2. Ubuntu LTS 20.04
 
 ## GCC Version
 The install-arm-toolchains.sh script will install ARM's 9-2019-q4-major version. This repo will be updated to install the newest release. If there is a new GNU update and the scripts aren't updated, then you can either do the following
